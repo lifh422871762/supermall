@@ -1,5 +1,5 @@
 <template>
-  <swiper ref="swiper" v-if="banners.length">
+  <swiper>
     <swiper-item v-for="(item, index) in banners" :key="index">
       <a :href="item.link">
         <img :src="item.image" alt="">
@@ -21,16 +21,6 @@
       banners: {
         type: Array,
         default: []
-      }
-    },
-    methods: {
-      stopTimer() {
-        this.$refs.swiper.stopTimer()
-      },
-      startTimer() {
-        if (this.$refs.swiper) {
-          this.$refs.swiper.startTimer()
-        }
       }
     }
   }
